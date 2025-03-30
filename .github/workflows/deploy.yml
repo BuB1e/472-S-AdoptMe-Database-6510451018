@@ -38,6 +38,7 @@ jobs:
           prerelease: false
 
   build:
+    needs: tag-and-release
     runs-on: "ubuntu-latest"
     permissions:
       id-token: write
