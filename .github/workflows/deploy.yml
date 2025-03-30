@@ -12,9 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    outputs:
+      new_tag: ${{ steps.tag.outputs.new_tag }}  # Add this outputs section
     steps:
       - name: "Checkout Repository"
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Need full history for proper tagging
 
       - name: "Get Latest Tag"
         id: tag
