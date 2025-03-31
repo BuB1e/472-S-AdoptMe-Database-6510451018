@@ -13,7 +13,7 @@ services:
       - adoptme-network 
     volumes:
       - .:/usr/src/app
-    command: sh -c "bunx prisma db push && bun run start"
+    command: sh -c "bunx prisma db push && bun src/index.ts"
   
   adoptme-postgres:
     image: postgres:16
